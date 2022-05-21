@@ -1,0 +1,43 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.holder {
+  margin: 30px;
+}
+.list {
+  margin: 0 20px 0 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.list-item {
+  display: flex;
+  font-size: 18px;
+  flex-direction: row;
+  margin: 0 0 10px 0;
+}
+.image-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin: 0 10px 0 10px;
+}
+.image-holder {
+  margin: 0 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+.image {
+  width: 600px;
+  height: 90vh;
+  object-fit: cover;
+}
+.title {
+  border: none;
+  height: 30px;
+  font-size: 18px;
+  margin: 10px 0 0 0;
+  text-align: center;
+}
