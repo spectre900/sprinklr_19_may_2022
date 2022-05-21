@@ -14,7 +14,6 @@
 }
 .list-item {
   display: flex;
-  font-size: 18px;
   flex-direction: row;
   margin: 0 0 10px 0;
 }
@@ -23,6 +22,13 @@
   height: 50px;
   object-fit: cover;
   margin: 0 10px 0 10px;
+}
+.image-title {
+  width: 230px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .image-holder {
   margin: 0 20px 0 20px;
