@@ -32,9 +32,6 @@
 .image-title {
   width: 220px;
   align-self: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .image-holder {
   margin: 0 10px 0 10px;

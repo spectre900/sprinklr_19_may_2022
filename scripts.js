@@ -2,6 +2,21 @@ let itemInFocus = 0;
 let list = document.querySelector(".list");
 let imageHolder = document.querySelector(".image-holder");
 
+function handleTextOverflow(title) {
+  if (title.length <= 31) {
+    return title;
+  }
+  let newTitle = "";
+  for (let i = 0; i < 14; i++) {
+    newTitle += title[i];
+  }
+  newTitle += "...";
+  for (let i = title.length - 14; i < title.length; i++) {
+    newTitle += title[i];
+  }
+  return newTitle;
+}
+
 function displayItem(listItem) {
   let image = document.createElement("img");
   image.classList.add("image");
@@ -9,9 +24,10 @@ function displayItem(listItem) {
 
   let title = document.createElement("input");
   title.classList.add("title");
-  title.setAttribute("value", listItem.children[1].innerHTML);
-  title.addEventListener("change", function () {
-    listItem.children[1].innerHTML = title.value;
+  title.setAttribute("value", listItem.children[1].getAttribute("title"));
+  title.addEventListener("input", function () {
+    listItem.children[1].setAttribute("title", title.value);
+    listItem.children[1].innerHTML = handleTextOverflow(title.value);
   });
 
   imageHolder.innerHTML = "";
@@ -34,7 +50,8 @@ function addItemToList(item, itemIndex) {
 
   let listItemTitle = document.createElement("span");
   listItemTitle.classList.add("image-title");
-  listItemTitle.innerHTML = item.title;
+  listItemTitle.setAttribute("title", item.title);
+  listItemTitle.innerHTML = handleTextOverflow(item.title);
 
   listItem.appendChild(listItemImage);
   listItem.appendChild(listItemTitle);
