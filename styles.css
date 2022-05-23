@@ -5,6 +5,9 @@
 }
 .holder {
   margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .list {
   margin: 0 10px 0 10px;
@@ -54,4 +57,20 @@
   font-size: 18px;
   margin: 10px 0 0 0;
   text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  .list {
+    margin-bottom: 20px;
+  }
+  .holder {
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .image {
+    width: 80vw;
+    height: calc(1.5 * 80vw);
+    object-fit: cover;
+    border-radius: 10px;
+  }
 }
